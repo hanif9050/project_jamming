@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Main from './Container/Main';
+import styles from "./App.module.css";
+import SearchBar from './Components/SearchBar/SearchBar';
+
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className={styles.app}>
+      <h1>Hnaif</h1>
+      <SearchBar/>
     </div>
   );
 }

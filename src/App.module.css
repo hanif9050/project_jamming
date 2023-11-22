@@ -1,0 +1,43 @@
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --ff-primary: 'Source Sans Pro';
+    --ff-scondary:"Source Code Pro";
+
+    --fw-reg:300;
+    --fw-bold:900;
+
+    --clr-light:#ffff;
+    --clr-dark:rgb(43, 42, 76);
+    --clr-accent:rgb(78, 79, 235);
+
+    --fs-h1:3rem;
+    --fs-h2:3.25rem;
+    --fs-h3:1.25rem;
+    --fs-body:1rem;
+}
+h1{
+    margin: 0;
+    line-height: 1;
+}
+
+/* body */
+body{
+   
+    color: var(--clr-light);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    /* height: 100vh; */
+    
+}
+.app{
+    background-image: url(../src/Assets/BG-starry-sky.jpg);
+    height: 100vh;
+}
