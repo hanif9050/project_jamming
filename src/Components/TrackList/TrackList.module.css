@@ -1,0 +1,24 @@
+.containerList {
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  /* margin-left: 10px; */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.button:active {
+  outline: auto;
+}
+.containerList p {
+  font-size: 0.7rem;
+}

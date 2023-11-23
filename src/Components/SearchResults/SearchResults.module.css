@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: "Source Sans Pro";
+  --ff-scondary: "Source Code Pro";
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #ffff;
+  --clr-dark: rgb(43, 42, 76);
+  --clr-accent: rgb(78, 79, 235);
+
+  --fs-h1: 3rem;
+  --fs-h2: 3.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+}
+.container {
+  width: 50%;
+  min-height: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(13, 12, 22, 0.8);
+  padding: 1rem;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+}
+/* ul li{
+    border-bottom: 1px solid white;
+    margin-bottom: 4px;
+} */

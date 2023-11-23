@@ -39,5 +39,10 @@ body{
 }
 .app{
     background-image: url(../src/Assets/BG-starry-sky.jpg);
-    height: 100vh;
+    
+    
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
 }

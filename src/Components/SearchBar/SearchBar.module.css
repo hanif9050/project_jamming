@@ -22,10 +22,10 @@
 }
 .inputField{
     font-size: 2rem;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     outline: none;
-    width: 50%;
-    height: 3rem;
+    width: 20rem;
+    height: 2.5rem;
     display: block;
     margin: 0 auto;
 }
@@ -33,5 +33,10 @@
     outline: 3px solid var(--clr-accent);
 }
 .button{
-    
+    padding: 0.3rem 2.5rem;
+    border-radius: 1.5rem;
+    font-size: var(--fs-h3);
+    display: block;
+    margin: 2rem auto;
+
 }
