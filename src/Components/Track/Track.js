@@ -6,7 +6,7 @@ function Track(props) {
   if (props.trackList.length > 0) {
     track = props.trackList.map((song) => (
       <TrackList
-        key={song.id}
+        key={song.album.id}
         song={song}
         handleTrack={props.handleTrackRemove}
         button=""
