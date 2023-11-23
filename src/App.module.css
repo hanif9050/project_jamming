@@ -1,48 +1,49 @@
-
 *,
 *::before,
-*::after{
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
-:root{
-    --ff-primary: 'Source Sans Pro';
-    --ff-scondary:"Source Code Pro";
+:root {
+  --ff-primary: "Source Sans Pro";
+  --ff-scondary: "Source Code Pro";
 
-    --fw-reg:300;
-    --fw-bold:900;
+  --fw-reg: 300;
+  --fw-bold: 900;
 
-    --clr-light:#ffff;
-    --clr-dark:rgb(43, 42, 76);
-    --clr-accent:rgb(78, 79, 235);
+  --clr-light: #ffff;
+  --clr-dark: rgb(43, 42, 76);
+  --clr-accent: rgb(78, 79, 235);
 
-    --fs-h1:3rem;
-    --fs-h2:3.25rem;
-    --fs-h3:1.25rem;
-    --fs-body:1rem;
+  --fs-h1: 3rem;
+  --fs-h2: 3.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
 }
-h1{
-    margin: 0;
-    line-height: 1;
+h1 {
+  margin: 0;
+  line-height: 1;
 }
 
 /* body */
-body{
-   
-    color: var(--clr-light);
-    margin: 0;
-    font-family: var(--ff-primary);
-    font-size: var(--fs-body);
-    line-height: 1.6;
-    /* height: 100vh; */
-    
+body {
+  color: var(--clr-light);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  /* height: 100vh; */
 }
-.app{
-    background-image: url(../src/Assets/BG-starry-sky.jpg);
-    
-    
+.app {
+  background-image: url(../src/Assets/BG-starry-sky.jpg);
 }
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 700px) {
+  .trackContainer {
+    display: flex;
+    gap: 1rem;
+  }
 }

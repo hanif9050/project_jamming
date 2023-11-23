@@ -6,7 +6,7 @@ function SearchResults(props) {
     <TrackList
       key={song.id}
       song={song}
-      handleTrackAdd={props.handleTrackAdd}
+      handleTrack={props.handleTrackAdd}
       button="plus"
     />
   ));

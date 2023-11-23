@@ -5,7 +5,7 @@ function TrackList(props) {
   // props.handleTrackAdd
 
   const handleClick = (song) => {
-    props.handleTrackAdd(song);
+    props.handleTrack(song);
     console.log("clicked", song);
   };
   return (
