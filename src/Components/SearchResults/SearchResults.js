@@ -5,9 +5,13 @@ function SearchResults(props) {
   // data.album.id
   // data.album.title
   // data.artist.name
+  // data.tracks.items
+  // data.tracks.items.name
+  // data.tracks.items.id
+  // data.tracks.items.name
   const listData = props.data.map((song) => (
     <TrackList
-      key={song.album.id}
+      key={song.id}
       song={song}
       handleTrack={props.handleTrackAdd}
       button="plus"

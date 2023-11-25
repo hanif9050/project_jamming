@@ -7,40 +7,27 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import dataJs from "./Fetch";
 import SearchResults from "./Components/SearchResults/SearchResults";
 import Track from "./Components/Track/Track";
+import { getToken, getTrackInfo, createPlaylist, userId } from "./Spotify";
+import { Spotify } from "./SpotifyLatest";
 
 function App() {
-  const [data, setDate] = useState([]);
+  const [data, setData] = useState([]);
   const [trackList, setTrackList] = useState([]);
-  /*   useEffect(() => {
-    dataJs("h").then((res) => {
-      setDate(res);
-    });
-  }); */
+  const [search, setSearch] = useState(null);
   useEffect(() => {
-    const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=Sorry";
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "41c5b43e54msh94c735d769cec1fp172702jsn00545eb8d289",
-        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-      },
-    };
-    // data.album.id
-    // data.album.title
-    // data.artist.name
-
-    const fetchReq = async (url, options) => {
-      try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        // console.log(result.data.slice(0, 10));
-        setDate(result.data.slice(0, 10));
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchReq(url, options);
+    Spotify.getAccessToken();
   }, []);
+  useEffect(() => {
+    if (search) {
+      console.log(search);
+      Spotify.search(search).then((res) => {
+        setData(res);
+        console.log("inside", res);
+      });
+    }
+    // getToken().then((response) => setToken(response.access_token));
+  }, [search]);
+
   const handleTrackAdd = (item) => {
     if (!trackList.includes(item)) {
       setTrackList((prev) => [...prev, item]);
@@ -54,16 +41,31 @@ function App() {
       return [...afterRemove];
     });
   };
-  console.log("trackList outside div", trackList);
+
+  const handleSearchButton = (item) => {
+    setSearch(item);
+  };
+  const savePlaylist = (playlistName) => {
+    const trackURIs = trackList.map((t) => t.uri);
+    Spotify.savePlaylist(playlistName, trackURIs).then((res) => {
+      console.log(res);
+      setTrackList([]);
+    });
+  };
+  // console.log("trackList outside div", trackList);
   // console.log(data);
   return (
     <div className={styles.app}>
       <div className={styles.container}>
         <h1>Hnaif</h1>
-        <SearchBar />
+        <SearchBar handleSearchButton={handleSearchButton} />
         <div className={styles.trackContainer}>
           <SearchResults data={data} handleTrackAdd={handleTrackAdd} />
-          <Track trackList={trackList} handleTrackRemove={handleTrackRemove} />
+          <Track
+            trackList={trackList}
+            handleTrackRemove={handleTrackRemove}
+            savePlaylist={savePlaylist}
+          />
         </div>
       </div>
     </div>

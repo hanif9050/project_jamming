@@ -11,9 +11,9 @@ function TrackList(props) {
   return (
     <div>
       <ul>
-        <div className={styles.containerList}>
+        <div key={props.song.id} className={styles.containerList}>
           <li className={styles.list}>
-            {props.song.album.title}
+            {props.song.name}
             <button
               className={styles.button}
               onClick={() => handleClick(props.song)}
@@ -21,8 +21,8 @@ function TrackList(props) {
               {buttonSigned}
             </button>
           </li>
-          <p>{props.song.title}</p>
-          <p>{props.song.artist.name}</p>
+          <p>{props.song.album}</p>
+          <p>{props.song.artists}</p>
         </div>
       </ul>
     </div>
