@@ -1,13 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useEffect, useState } from "react";
 
 import styles from "./App.module.css";
 import SearchBar from "./Components/SearchBar/SearchBar";
-import dataJs from "./Fetch";
+
 import SearchResults from "./Components/SearchResults/SearchResults";
 import Track from "./Components/Track/Track";
-import { getToken, getTrackInfo, createPlaylist, userId } from "./Spotify";
+
 import { Spotify } from "./SpotifyLatest";
 
 function App() {
